@@ -65,7 +65,7 @@ class TrainModel(Experiment):
             self.writer.write_metrics(
                 prediction.squeeze(), observation.squeeze(), loss, epoch
             )
-            if epoch % 5 == 0:
+            if epoch % 1 == 0:
                 prediction_np = prediction_.cpu().detach().numpy()
                 np.save(
                     self.save_path / f"{self.cfg.name}_predictions_epoch_{epoch}.npy",

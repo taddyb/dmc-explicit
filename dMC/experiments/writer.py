@@ -9,7 +9,7 @@ import numpy as np
 from omegaconf import DictConfig
 import torch
 from torch.utils.tensorboard import SummaryWriter
-import torchvision.transforms as transforms
+# import torchvision.transforms as transforms
 
 from dMC.experiments.metrics import Metrics
 
@@ -77,8 +77,9 @@ class Writer:
         plt.title(f"{name} vs Drainage Area for epoch {epoch}")
         plt.legend()
         plot_img = self._plot_to_image(fig)
-        tensor_image = transforms.ToTensor()(plot_img)
-        self._writer.add_image(f"{name}_plot", tensor_image, global_step=epoch)
+        self._writer.add_figure(f"{name}_plot", fig)
+        # tensor_image = transforms.ToTensor()(plot_img)
+        # self._writer.add_image(f"{name}_plot", tensor_image, global_step=epoch)
         self._writer.flush()
 
     def _plot_to_image(self, figure: matplotlib.image.PcolorImage):
