@@ -2,7 +2,8 @@ defaults:
   - config: 03_train_usgs_period_1a
   - _self_
 # Global ------------------------------------------------------------------------
-cwd: /Users/taddbindas/projects/dMC-Juniata-workshop
-data_dir: ${cwd}/notebooks/data/dMC-Juniata-hydroDL2/dx-2000dis1_non_merge
+cwd: /projects/mhpi/tbindas/dmc-explicit
+data_dir: /projects/mhpi/data/dMC-Juniata-hydroDL2/dx-2000dis1_non_merge
 name: 01_workshop_example
 device: cpu
+device_num: cpu

@@ -48,7 +48,6 @@ experiment:
     lb: 0
     ub: 500
   learning_rate: 0.01
-  device: cpu
   epochs: 50
   warmup: 72
   lb: [ 0.001, 0.001 ]
