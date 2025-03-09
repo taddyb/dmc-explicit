@@ -35,7 +35,12 @@ class TrainModel(Experiment):
             for data in data_loader:
                 hydrofabric, observation_ = data
                 normalized_attributes = hydrofabric.normalized_attributes[
-                    :, [0, 1, 2, 3, 4, 6, 7, 8]
+                    :, [
+                        0, #  Reach Width
+                        1, #  Average-Reach Elevation
+                        2, #  Slope
+                        4, #  Total drainage area km
+                    ]
                 ]
                 physics_model.neural_network(normalized_attributes)
                 log.info(f"{self.cfg.save_path}: median n: {physics_model.n.mean().item()}")

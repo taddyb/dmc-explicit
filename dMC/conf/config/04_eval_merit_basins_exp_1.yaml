@@ -48,6 +48,7 @@ experiment:
     lb: 0
     ub: 500
   learning_rate: 0.01
+  device: cpu
   epochs: 50
   warmup: 72
   lb: [ 0.001, 0.001 ]
@@ -66,7 +67,7 @@ model:
     fan: fan_in
     gain: 0.7
     hidden_size: 6
-    input_size: 8
+    input_size: 4
     output_size: 2
   length:
     idx: 8
